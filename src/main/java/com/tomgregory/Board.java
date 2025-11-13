@@ -61,7 +61,7 @@ public class Board {
     }
 
     private Point calculateEndPoint(Point startPoint) {
-        return switch (getRandomInteger(1)) {
+        return switch (getRandomInteger(2)) {
             case 0 -> getHorizontalEndPoint(startPoint);
             case 1 -> getVerticalEndPoint(startPoint);
             default -> throw new IllegalStateException("Unexpected value.");
@@ -77,6 +77,7 @@ public class Board {
     }
 
     private static int getRandomInteger(int maxValue) {
-        return new Random().nextInt(maxValue);
+
+        return new Random().nextInt(maxValue + 1 );
     }
 }
